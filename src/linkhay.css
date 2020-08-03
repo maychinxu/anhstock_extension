@@ -1,18 +1,23 @@
 #qvLinkDiv_ {
 	display:none;
 	margin-top:16px;
+	margin-bottom: 10px;
 }
 #qvLink_ {
-	background-color:#C00607;
+	background-color: #2e78ef;
 	color:#eee;
 	border: 0;
 	border-radius:3px;
-	padding:4px 8px;
-	font-size:12px;
-	cursor:pointer
+	padding:15px 15px;
+	font-size:18px;
+	cursor:pointer;
+	display: block;
 }
 #qvLink_:hover {
 	color: #fff;
+}
+#qvLink_.download-now-as {
+	background-color: #26ca00 !important;
 }
 #qvTopBar_ {
 	margin-top:13px;
@@ -281,4 +286,23 @@
 	width: auto;
 	height: auto;
 	cursor: zoom-in;
+}
+.confirm-stock-info {
+	/*border: dashed 1px #757272;*/
+	padding: 10px;
+	margin: 10px 0 10px 0;
+	font-size: 14px;
+	color: #3e3d3d;
+	display: none;
+	background-color: #dae8e7;
+	border-top: 1px solid #ced2d3;
+	border-bottom: 1px solid #fff;
+}
+.as_file_name {
+	font-size: 22px;
+	padding: 10px 0 0 0;
+	display: block;
+}
+.as-highlight {
+	color:red;
 }

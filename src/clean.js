@@ -9,8 +9,8 @@ window.Cleaner_ = window.Cleaner_ || (function($){
 		$(".ads-links-recommend").hide();
 		
 		// fix the avatar display in case user has no avatar
-		var $img = $(".link-info .info a.user-link img");
-		$img.attr("alt", $img.attr("alt").slice(0, 2).toUpperCase());
+		// var $img = $(".link-info .info a.user-link img");
+		// $img.attr("alt", $img.attr("alt").slice(0, 2).toUpperCase());
 		
 		// fix avatar in voter list
 		$(".V2-link-voter-list li a img").each(function(){

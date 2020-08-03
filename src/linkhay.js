@@ -10,6 +10,7 @@
 		}
 	}
 
+
 	waitForJQuery(function($){
 		if (PageInfo_.isExternalDetailedPage) {
 			// quick view

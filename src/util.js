@@ -168,6 +168,115 @@ window.Util_ = window.Util_ || (function($){
 			});
 		}).attr("src", src);
 	}
+
+	exports.getStockID = function(value, site) {
+		var id = '';
+		if(value.match(/fbclid/)){
+			value = value.replace(/\?fbclid=(.*?)$/g,"");
+		}
+
+		if(site=="storyblocks" || site=="videoblocks" || site=="audioblocks"||site=="soundsnap" || site=="alamy"){
+			if( value.match(/http:/gi) || value.match(/https:/gi))
+			{
+				var res = value.split("/");
+				// id = res[4];
+				id = res[res.length - 1];
+
+				if(site=="storyblocks" || site=="audioblocks"){
+					var res2 = id.split(".html");
+					id = res2[0];
+				}else if(site=="soundsnap"){
+					var res = value.split("/");
+					id = res[res.length-1];
+				} else if(site=="alamy"){
+					var res2 = value.split(".html");
+					id = res2[0];
+					var regex = /\d[0-9]{3,10}/g;
+					var matches = id.match(regex);
+					if(matches){
+						 id = matches[matches.length-1];
+					}
+				}
+			}else if(value.match(/www/gi)){
+				var res = value.split("/");
+				id = res[2];
+				if(site=="storyblocks"||site=="audioblocks" || site=="alamy"){
+					var res2 = id.split(".html");
+					id = res2[0];
+				}
+			}else {
+				id = value;
+			}
+		}else if(site=="thinkstockphotos"){
+			if( value.match(/http:/gi))
+			{
+				var res = value.split("/");
+				id = res[5];
+			}else {
+				id = value;
+			}
+		}
+		else if(site=="istockphoto"){
+			if( value.match(/http:/gi) || value.match(/https:/gi))
+			{
+				var regex = /-gm(.*)-/gi;
+				match = regex.exec(value);
+				if(match){
+					id = match[1];
+				}
+			}else {
+				id = value;
+			}
+		}else if(site=="fotosearch"){
+			if( value.match(/http:/gi) || value.match(/https:/gi))
+			{
+				var res = value.split("/");
+				id = res[res.length-2];
+				id  = id.replace('k','');
+			}else {
+				id = value;
+			}
+			id  = id.replace('k','');
+		}
+		else if(site=="envatoelements"){
+			if( value.match(/http:/gi) || value.match(/https:/gi))
+			{
+				var res = value.split("-");
+				id = res[res.length-1];
+			}else {
+				id = value;
+			}
+		}
+		else if(site=="123rf"){
+			var regex = /\d[0-9]{4,10}/gi;
+			match = regex.exec(value);
+			if(match){
+				 id = match[0];
+			}
+		}else {
+			// Normal Site
+			var regex = /-\d[0-9]{3,10}\?st/gi;
+			match = regex.exec(value);
+			// id anh st
+			if(match){
+				 id = match[0];
+				id  = id.replace('-','');
+				id  = id.replace('?st','');
+				// alert(id);
+			}else {
+				var regex = /\d[0-9]{3,10}/g;
+				var matches = value.match(regex);
+				// id anh st
+				if(matches){
+					 id = matches[matches.length-1];
+					// alert(id);
+				}
+			}
+		}
+
+		return id;
+
+	}
 	
 	exports.shouldExpand = function(){
 		// there's hash -> came from noti/reply/mention
@@ -223,6 +332,14 @@ window.Util_ = window.Util_ || (function($){
 		
 		// It is long -> expand depend on number of comments
 		return (commentCount < 5);
+	}
+
+	exports.bytesToSize = function (bytes) {
+		if(bytes == 0) return '0 Byte';
+		var k = 1000;
+		var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+		var i = Math.floor(Math.log(bytes) / Math.log(k));
+		return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];
 	}
 	
 	/*

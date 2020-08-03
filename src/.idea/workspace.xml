@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:upstream" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8adac184-6482-445a-a74b-cf029b16888b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/src.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backup/preview.old.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clean.js" beforeDir="false" afterPath="$PROJECT_DIR$/clean.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linkhay.css" beforeDir="false" afterPath="$PROJECT_DIR$/linkhay.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linkhay.js" beforeDir="false" afterPath="$PROJECT_DIR$/linkhay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pageInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/pageInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/popup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/preview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sites.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/util.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1fZlsZXh7mW6oWn2kiF7Rgg52Nv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Backup" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8adac184-6482-445a-a74b-cf029b16888b" name="Default Changelist" comment="" />
+      <created>1596433703181</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596433703181</updated>
+      <workItem from="1596433704476" duration="15466000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="507" y="200" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1596441030506">
+      <screen x="0" y="23" width="1680" height="986" />
+    </state>
+    <state x="507" y="200" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.23.1680.986@0.23.1680.986" timestamp="1596441030506" />
+    <state x="341" y="155" key="SettingsEditor" timestamp="1596446284051">
+      <screen x="0" y="23" width="1680" height="986" />
+    </state>
+    <state x="341" y="155" key="SettingsEditor/0.23.1680.986@0.23.1680.986" timestamp="1596446284051" />
+    <state x="463" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1596451112517">
+      <screen x="0" y="23" width="1680" height="986" />
+    </state>
+    <state x="463" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1680.986@0.23.1680.986" timestamp="1596451112517" />
+    <state x="539" y="279" width="602" height="474" key="find.popup" timestamp="1596451115825">
+      <screen x="0" y="23" width="1680" height="986" />
+    </state>
+    <state x="539" y="279" width="602" height="474" key="find.popup/0.23.1680.986@0.23.1680.986" timestamp="1596451115825" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1596433822918">
+      <screen x="0" y="23" width="1680" height="986" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.23.1680.986@0.23.1680.986" timestamp="1596433822918" />
+    <state x="505" y="240" width="670" height="676" key="search.everywhere.popup" timestamp="1596448039671">
+      <screen x="0" y="23" width="1680" height="986" />
+    </state>
+    <state x="505" y="240" width="670" height="676" key="search.everywhere.popup/0.23.1680.986@0.23.1680.986" timestamp="1596448039671" />
+  </component>
+</project>

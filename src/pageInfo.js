@@ -11,7 +11,7 @@ window.PageInfo_ = window.PageInfo_ || (function($){
 	if (!!info.isExternalDetailedPage) {
 		// if a builtin preview available (like the one for Youtube link)
 		info.hadBuiltinPreview = ($(".link-summary .app-content").length > 0);
-		info.targetUrl = $("#admrecommen").data("url").toLowerCase();
+		// info.targetUrl = $("#admrecommen").data("url").toLowerCase();
 		info.title = $(".link-summary .title h1").text().trim();
 		info.linkID = $(".link-summary .V2-vote-box").attr("link-id");
 	} else {
@@ -20,8 +20,15 @@ window.PageInfo_ = window.PageInfo_ || (function($){
 	
 	info.query = 	Util_.query(window.location.href);
 	info.user = $("#account-username").text().trim();
+
+
+	info.isExternalDetailedPage = true;
+	info.hadBuiltinPreview = false;
+	info.targetUrl = window.location.href;
+	info.title = "Cập nhật: 10 tỉnh thành cho học sinh nghỉ học";
+	info.linkID = "3842981";
 	
-	//console.log(info);
+	console.log(info);
 	return info;
 	
 })(jQuery);
