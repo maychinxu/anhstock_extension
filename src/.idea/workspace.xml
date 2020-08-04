@@ -24,21 +24,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8adac184-6482-445a-a74b-cf029b16888b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/src.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup/preview.old.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clean.js" beforeDir="false" afterPath="$PROJECT_DIR$/clean.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linkhay.css" beforeDir="false" afterPath="$PROJECT_DIR$/linkhay.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linkhay.js" beforeDir="false" afterPath="$PROJECT_DIR$/linkhay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pageInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/pageInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/popup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/preview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sites.js" beforeDir="false" afterPath="$PROJECT_DIR$/sites.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/util.js" afterDir="false" />
-    </list>
+    <list default="true" id="8adac184-6482-445a-a74b-cf029b16888b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596433703181</updated>
-      <workItem from="1596433704476" duration="15466000" />
+      <workItem from="1596433704476" duration="15550000" />
     </task>
     <servers />
   </component>
