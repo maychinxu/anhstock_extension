@@ -2,6 +2,8 @@ var TEST_PREVIEW_URL_ = null;
 var AS_APP_NAME = 'ANHSTOCK FAST DOWNLOADER';
 window.Previewer_ = window.Previewer_ || (function ($) {
 
+
+
     // should load from template files
     var buildPreviewPane = function (site, url) {
         // alert(url)
@@ -9,12 +11,38 @@ window.Previewer_ = window.Previewer_ || (function ($) {
         var source = site.source;
         var stockid = Util_.getStockID(url, source);
 
-        var $qvLink = $("<div id='qvLinkDiv_'><div class='confirm-stock-info'>Info</div><button id='qvLink_' class='super-cta download-info-as' data-stockid='" + stockid + "' data-url='" + url + "' data-source='" + source + "' data-type='' data-size='' ><i class='fa fa-bolt' aria-hidden='true'></i> &darr; Tải về với AnhStock</button></div>");
+        // To set
+        chrome.storage.local.set({'testKey': 'Test Value'});
 
-        $(".link-summary").append($qvLink);
+        // To get
+        chrome.storage.local.get('testKey', function (data) {
+            console.log(data);
+            // alert(data.testKey)
+            // logs out "Object {testKey: "Test Value"}"
+        })
 
-        // istockphoto, 123rf, shutterstock
-        $(".adp-file-confirm-cancel-wrapper,#licensesContainer,.m_i_d707b").prepend($qvLink);
+
+        var $qvLink = $("<div id='qvLinkDiv_'><div class='confirm-stock-info'>Info</div><button id='qvLink_' class='super-cta download-info-as' data-stockid='" + stockid + "' data-url='" + url + "' data-source='" + source + "' data-type='' data-size='' >  <span class='icon-down'>&darr;</span> Tải về với <img style='vertical-align: bottom; height: 20px;background-color: white;display: inline-block;border-radius: 5px;padding:3px' src='"+ chrome.extension.getURL('/icon.png')+"'> AnhStock </button></div>");
+
+
+        // $(".link-summary").append($qvLink);
+        // CREATE APPEND DOWNLOAD BUTTON
+        // .adp-file-confirm-cancel-wrapper - istockphoto
+        // #licensesContainer - 123RF
+        //
+
+        let main_select_location = null;
+        if (url.match(/shutterstock.com/ig)) {
+            main_select_location = $("button[data-automation='download_free_trial']").parent();
+            main_select_location.prepend($qvLink);
+        } else if (url.match(/istockphoto.com/ig)) {
+            main_select_location = $(".adp-file-confirm-cancel-wrapper");
+            main_select_location.append($qvLink);
+        } else if (url.match(/123rf.com/ig)) {
+            main_select_location = $("#licensesContainer");
+            main_select_location.prepend($qvLink);
+        }
+
 
 
         var $qv = $("<div id='qvDiv_' />")
@@ -42,17 +70,17 @@ window.Previewer_ = window.Previewer_ || (function ($) {
             }
         });
 
-        $qv.append($qvTopBar)
-            .append($qvTitle)
-            .append($qvLead)
-            .append($qvLeadImg)
-            .append($qvLeadImgCaption)
-            .append($qvContent)
-            .append($qvBottomBar)
-            .append($qvOverlay)
-            .append($qvTools);
+        // $qv.append($qvTopBar)
+        //     .append($qvTitle)
+        //     .append($qvLead)
+        //     .append($qvLeadImg)
+        //     .append($qvLeadImgCaption)
+        //     .append($qvContent)
+        //     .append($qvBottomBar)
+        //     .append($qvOverlay)
+        //     .append($qvTools);
 
-        $(".link-summary").append($qv);
+        // $(".link-summary").append($qv);
 
         // Quick View button
         // Step 1 get info
@@ -65,11 +93,11 @@ window.Previewer_ = window.Previewer_ || (function ($) {
             var id = btn_button.attr("data-stockid");
             var source = btn_button.attr("data-source");
 
-            btn_button.html('Đang tải..');
-            info_element.html('Đang lấy thông tin...').slideToggle("fast");
+            btn_button.html('<span class="loader"></span> Đang xử lý...');
+            info_element.html('<h4 style="color:red">Đang lấy thông tin...</h4>').slideToggle("fast");
             btn_button.attr("disabled", true);
 
-            var url = 'http://api.anhstock.com/?user=hoangsonx&token=322bd1678e81b504225b8ff796fc5747&act=down&id='+ id +'&site=' + source;
+            var url = 'http://api.anhstock.com/?user=hoangsonx&token=322bd1678e81b504225b8ff796fc5747&act=down&id=' + id + '&site=' + source;
             Util_.getJSON({
                 url: url
             }, function (data) {
@@ -124,12 +152,10 @@ window.Previewer_ = window.Previewer_ || (function ($) {
             var type = btn_button.attr("data-type");
             var size = btn_button.attr("data-size");
 
-
             // alert( type +'/'+  size);
 
-            info_element.append('<div>Đang xử lý, xin đợi...</div>');
-
-            btn_button.html('Đang tải về..');
+            info_element.append('<br/><h4 style="color:red">Đang xử lý tải về, xin đợi...</h4>');
+            btn_button.html('<span class="loader"></span> Đang tải về..');
             btn_button.attr("disabled", true);
 
             var url = 'http://api.anhstock.com/?user=hoangsonx&token=322bd1678e81b504225b8ff796fc5747&act=down&id=' + id + '&site=' + source + '&type=' + type + '&size=' + size + '&captcha=1';
@@ -139,7 +165,7 @@ window.Previewer_ = window.Previewer_ || (function ($) {
                 console.log(data)
                 if (data.status) {
                     var item_text = '<div><strong>' + AS_APP_NAME + '</strong></div>';
-                    item_text = item_text + '<div><a href="' + data.url + '" target="_blank"><strong class="as_file_name as-highlight"> &darr; ' + data.file_name + '</strong></a><br/>(' + (data.file_size ? Util_.bytesToSize(data.file_size) : 'Lỗi file') + ')</div>';
+                    item_text = item_text + '<div><a href="' + data.url + '" target="_blank"><strong class="as_file_name as-highlight"> &darr; ' + (typeof(data.file_name) != "undefined" ? data.file_name : 'Lỗi tải') + '</strong></a><br/>(Kích cỡ: ' + (data.file_size ? '<strong>'+Util_.bytesToSize(data.file_size)+'</strong>' : 'Lỗi file, vui lòng tải lại trang rồi thử lại') + ')</div>';
                     item_text = item_text + '<div>Nếu trình duyệt không tự tải file vui lòng click vào link trên để tải file về</div>';
                     if (data.slot || data.xu) {
                         item_text = item_text + '<p class="as-highlight">Số dư còn lại: ' + (data.slot ? data.slot + ' lượt tải' : (data.xu ? data.xu + ' Xu' : '0 Xu')) + '</p>';
@@ -147,7 +173,7 @@ window.Previewer_ = window.Previewer_ || (function ($) {
                     info_element.html(item_text);
                     btn_button.removeClass('download-now-as').hide();
 
-                    if(data.url){
+                    if (data.url) {
                         // window.open(data.url);
                         window.location.href = data.url;
                     }

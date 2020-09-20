@@ -1,0 +1,28 @@
+// To set 
+chrome.storage.local.set({'testKey':'Test Value'});
+
+// To get
+chrome.storage.local.get('testKey', function(data){
+  console.log(data); 
+  // logs out "Object {testKey: "Test Value"}"
+})
+
+
+
+
+
+---------
+https://stackoverflow.com/questions/34060487/chrome-extension-store-large-amounts-of-data
+
+manifest.json: "permissions": ["unlimitedStorage"]
+
+
+https://codelearn.io/sharing/huong-dan-viet-chrome-extension-skip-quang-cao-youtube
+
+https://kipalog.com/posts/Viet-extension-cho-Chrome-Phan-1
+https://viblo.asia/p/cach-viet-mot-extension-chrome-co-ban-m68Z0wzMKkG
+https://viblo.asia/p/newbie-tap-viet-extension-tren-chrome-07LKXw4k5V4
+
+https://phambinh.net/bai-viet/huong-dan-tao-extension-chrome-va-dua-len-store-chi-trong-5-phut/
+
+https://topdev.vn/blog/cach-build-chrome-extension/
