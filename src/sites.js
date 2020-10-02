@@ -19,7 +19,11 @@ window.KnownSites_ = window.KnownSites_ || (function ($) {
             domain: "shutterstock.com",
             title: "Shutterstock",
         },
-
+        {
+            source: "adobestock",
+            domain: "stock.adobe.com",
+            title: "AdobeStock",
+        },
         {
             domain: "tuoitre.vn",
             title: ".content-detail .article-title",

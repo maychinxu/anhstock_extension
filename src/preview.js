@@ -24,19 +24,19 @@ window.Previewer_ = window.Previewer_ || (function ($) {
         console.log(site)
         var source = site.source;
         var stockid = Util_.getStockID(url, source);
-
+        console.log("ID item: " + stockid)
         // To set
         // chrome.storage.local.set({'testKey': 'Test Value'});
 
         // To get
         chrome.storage.local.get('testKey', function (data) {
-            console.log(data);
+            // console.log(data);
             // alert(data.testKey)
             // logs out "Object {testKey: "Test Value"}"
         })
 
 
-        var $qvLink = $("<div id='qvLinkDiv_'><div class='confirm-stock-info'>Info</div><button id='qvLink_' class='super-cta download-info-as' data-stockid='" + stockid + "' data-url='" + url + "' data-source='" + source + "' data-type='' data-size='' >  <span class='icon-down'>&darr;</span> Tải về <với></với> <img style='vertical-align: bottom; height: 20px;background-color: white;display: inline-block;border-radius: 5px;padding:3px' src='"+ chrome.extension.getURL('/icon.png')+"'> AnhStock </button></div>");
+        var $qvLink = $("<div id='qvLinkDiv_'><div class='confirm-stock-info'>Info</div><button id='qvLink_' class='super-cta download-info-as' data-stockid='" + stockid + "' data-url='" + url + "' data-source='" + source + "' data-type='' data-size='' >  <span class='icon-down'>&darr;</span> Tải về <với></với> <img class='logo-small' src='"+ chrome.extension.getURL('/icon.png')+"'> AnhStock </button></div>");
 
 
         // $(".link-summary").append($qvLink);
@@ -55,6 +55,10 @@ window.Previewer_ = window.Previewer_ || (function ($) {
         } else if (url.match(/123rf.com/ig)) {
             main_select_location = $(document).find("#download_button_scroll").parent();
             main_select_location.append($qvLink);
+        }else if (url.match(/stock.adobe.com/ig)) {
+            main_select_location = $(document).find(".js-buy-license-analytics").parent();
+            main_select_location.append($qvLink);
+            alert('ass')
         }
 
 
@@ -119,7 +123,7 @@ window.Previewer_ = window.Previewer_ || (function ($) {
                     var item_text = '<div><strong>' + AS_APP_NAME + '</strong></div>';
                     item_text = item_text + '<p class="red"><strong>Xác nhận thông tin tải:</strong></p>';
                     item_text = item_text + '<div>' + data.file_size + '</div>';
-                    item_text = item_text + '<div><strong class="red">' + (data.fee && data.fee != "0" ? '-' + data.fee : 'Miễn phí tải lại 48h') + '</strong></div>';
+                    item_text = item_text + '<div><strong class="red">' + (data.fee && data.fee != "0" ? '- ' + data.fee : 'Miễn phí tải lại 48h') + '</strong></div>';
                     info_element.html(item_text);
                     if (data.type) {
                         btn_button.attr("data-type", data.type);

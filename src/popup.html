@@ -1,42 +1,113 @@
 <!doctype html>
 <html>
-  <head>
-		<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
     <title>LinkHay QuickView</title>
-		<style>
-			body {
-				width: 320px;
-				background-color: #ffffff;
-				padding-top: 1px;
-				padding-bottom: 8px;
-				margin: 16px;
-			}
-			h4 {
-			  margin-bottom: 0.5rem;
-			}
-			button {
-				width: 100%;
-				border: 0;
-				line-height: 1.75;
-				border-radius: 3px;
-				background-color: #C00607;
-				color: #f8f8f8;
-				cursor: pointer;
-			}
-			.url {
-				word-break: break-all;
-			}
-	</style>
-  </head>
-  <body>
-		<h4>ANHSTOCK QUICK DOWNLOADER?</h4>
-		<p class="url"><i id="url"></i></p>
-		<p id="stopAskingWrap"><label><input id="stopAsking" type="checkbox" style="vertical-align: top;"> Không hỏi lại</label></p>
-		<p><button id="sendLink" title="Gửi link đang mở ở tab hiện tại lên Linkhay">GỬI</button></p>
-		p><small><i>LinkHay QuickView - version 1.1<br>By <a target="_blank" href="http://linkhay.com/u/thinker">@thinker</a> at <a target="_blank" href="http://www.mangcut.vn/">Măng Cụt Labs</a></i></small></p
-		<div>Hỗ trợ tải ảnh nhanh từ các trang Stock.</div>
-		<h5>Phiên bản: 1.0</h5>
-		<h5>www.anhstock.com</h5>
-		<script src="popup.js"></script>
-  </body>
+    <style>
+        body {
+            width: 320px;
+            background-color: #ffffff;
+            padding-top: 1px;
+            padding-bottom: 8px;
+            margin: 16px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h4 {
+            margin: 3px;
+            font-size: 14px;
+        }
+
+        .button {
+            border: 0;
+            line-height: 1.75;
+            border-radius: 3px;
+            color: #f8f8f8;
+            cursor: pointer;
+            display: block;
+            padding: 4px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .button.red {
+            background-color: #C00607;
+        }
+
+        .button.green {
+            background-color: #24980b;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .url {
+            word-break: break-all;
+            font-weight: bold;
+            color: #2e78ef;
+            padding: 8px 0px 8px 0px;
+            display: inline-block;
+            text-decoration: underline;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .tblInfo {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<p class="text-center"><img src="icon.png" style="height: 25px"></p>
+<h4 class="text-center">ANHSTOCK QUICK DOWNLOADER</h4>
+
+<div id="userDetail" style="display: none">
+    <table class="tblInfo">
+        <tbody>
+        <tr>
+            <td style="width: 28%; text-align: left">Email</td>
+            <td style="text-align: left"><strong id="user_email">?</strong></td>
+        </tr>
+        <tr>
+            <td>Số Xu</td>
+            <td><strong id="user_xu">?</strong> Xu</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top">Gói cước tải</td>
+            <td>
+                <div id="plan_detail">
+                    <div><strong id="plan_slot">?</strong> / <strong id="plan_total_slot">?</strong> lượt</div>
+                    <div id="plan_start_date">?</div>
+                    <div id="plan_end_date">?</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a class="url" href="#">Nạp xu</a> &nbsp; | &nbsp;
+                <a class="url" href="#">Lịch sử tải</a> &nbsp; | &nbsp;
+                <a class="url" href="#">Mua gói cước</a>
+                <a class="url" href="#">Đặt mua Video/3D </a> &nbsp; | &nbsp;
+                <a class="url" href="#">Tải App Desktop </a> &nbsp; | &nbsp;
+                <a class="url" href="#">Hỗ trợ </a>
+            </td>
+        </tr>
+        
+        </tbody>
+        </tr>
+    </table>
+    <p><a class="button red" id="btnlogout">Đăng xuất</a></p>
+</div>
+
+<p><a class="button green" href="#" id="btnlogin" title="Đăng nhập">Đăng nhập tài khoản</a></p>
+<div class="text-center">Hỗ trợ tải ảnh nhanh từ các trang Stock.</div>
+<h5 class="text-center"><a href="https://anhstock.com" target="_blank">www.anhstock.com</a></h5>
+<script src="popup.js"></script>
+</body>
 </html>

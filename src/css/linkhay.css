@@ -361,6 +361,7 @@
 .as-highlight, .red {
     color: red;
 }
+
 .grey {
     color: #3e3d3d;
 }
@@ -385,3 +386,13 @@
         transform: rotate(360deg);
     }
 }
+
+.logo-small {
+    vertical-align: bottom;
+    height: 20px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 3px
+}
+

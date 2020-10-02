@@ -24,7 +24,7 @@
 	"content_scripts":
 	[
 		{
-			"matches": ["*://*.linkhay.com/*", "*://*.istockphoto.com/*", "*://*.123rf.com/*", "*://*.shutterstock.com/*"],
+			"matches": ["*://*.linkhay.com/*", "*://*.istockphoto.com/*", "*://*.123rf.com/*", "*://*.shutterstock.com/*", "*://*.stock.adobe.com/*"],
 			"css": ["css/linkhay.css"],
 			"js": [
 				"jquery-3.2.1.min.js"
@@ -33,7 +33,7 @@
 			"run_at" : "document_start"
 		},
 		{
-			"matches": ["*://*.linkhay.com/*", "*://*.istockphoto.com/*", "*://*.123rf.com/*", "*://*.shutterstock.com/*"],
+			"matches": ["*://*.linkhay.com/*", "*://*.istockphoto.com/*", "*://*.123rf.com/*", "*://*.shutterstock.com/*", "*://*.stock.adobe.com/*"],
 			"js": [
 				"util.js",
 				"sticker.js",
