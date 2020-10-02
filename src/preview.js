@@ -1,8 +1,22 @@
 var TEST_PREVIEW_URL_ = null;
 var AS_APP_NAME = 'ANHSTOCK FAST DOWNLOADER';
+var DATA_KEY = 'anhstockData';
+var USERNAME = 'hoangsonx';
+var TOKEN = '322bd1678e81b504225b8ff796fc5747';
+var API_ENDPOINT = 'http://api.anhstock.com/index.php';
+
 window.Previewer_ = window.Previewer_ || (function ($) {
 
-
+    // var userData = null;
+    // var userTest = {username: 'hoangsonx@gmail.com', token: '322bd1678e81b504225b8ff796fc5747'};
+    // localStorage.setItem(DATA_KEY, JSON.stringify(userTest));
+    //
+    // userData =  Util_.tryParseJSON(localStorage.getItem(DATA_KEY), 0);
+    //
+    // console.log('load userData');
+    // console.log(userData);
+    //
+    // return false;
 
     // should load from template files
     var buildPreviewPane = function (site, url) {
@@ -12,7 +26,7 @@ window.Previewer_ = window.Previewer_ || (function ($) {
         var stockid = Util_.getStockID(url, source);
 
         // To set
-        chrome.storage.local.set({'testKey': 'Test Value'});
+        // chrome.storage.local.set({'testKey': 'Test Value'});
 
         // To get
         chrome.storage.local.get('testKey', function (data) {
@@ -22,7 +36,7 @@ window.Previewer_ = window.Previewer_ || (function ($) {
         })
 
 
-        var $qvLink = $("<div id='qvLinkDiv_'><div class='confirm-stock-info'>Info</div><button id='qvLink_' class='super-cta download-info-as' data-stockid='" + stockid + "' data-url='" + url + "' data-source='" + source + "' data-type='' data-size='' >  <span class='icon-down'>&darr;</span> Tải về với <img style='vertical-align: bottom; height: 20px;background-color: white;display: inline-block;border-radius: 5px;padding:3px' src='"+ chrome.extension.getURL('/icon.png')+"'> AnhStock </button></div>");
+        var $qvLink = $("<div id='qvLinkDiv_'><div class='confirm-stock-info'>Info</div><button id='qvLink_' class='super-cta download-info-as' data-stockid='" + stockid + "' data-url='" + url + "' data-source='" + source + "' data-type='' data-size='' >  <span class='icon-down'>&darr;</span> Tải về <với></với> <img style='vertical-align: bottom; height: 20px;background-color: white;display: inline-block;border-radius: 5px;padding:3px' src='"+ chrome.extension.getURL('/icon.png')+"'> AnhStock </button></div>");
 
 
         // $(".link-summary").append($qvLink);
@@ -33,16 +47,15 @@ window.Previewer_ = window.Previewer_ || (function ($) {
 
         let main_select_location = null;
         if (url.match(/shutterstock.com/ig)) {
-            main_select_location = $("button[data-automation='download_free_trial']").parent();
+            main_select_location = $(document).find("button[data-automation='download_free_trial']").parent();
             main_select_location.prepend($qvLink);
         } else if (url.match(/istockphoto.com/ig)) {
-            main_select_location = $(".adp-file-confirm-cancel-wrapper");
+            main_select_location = $(document).find(".adp-file-confirm-cancel-wrapper");
             main_select_location.append($qvLink);
         } else if (url.match(/123rf.com/ig)) {
-            main_select_location = $("#licensesContainer");
-            main_select_location.prepend($qvLink);
+            main_select_location = $(document).find("#download_button_scroll").parent();
+            main_select_location.append($qvLink);
         }
-
 
 
         var $qv = $("<div id='qvDiv_' />")
@@ -94,18 +107,19 @@ window.Previewer_ = window.Previewer_ || (function ($) {
             var source = btn_button.attr("data-source");
 
             btn_button.html('<span class="loader"></span> Đang xử lý...');
-            info_element.html('<h4 style="color:red">Đang lấy thông tin...</h4>').slideToggle("fast");
+            info_element.html('<h4 class="grey">Đang lấy thông tin...</h4>').slideToggle("fast");
             btn_button.attr("disabled", true);
 
-            var url = 'http://api.anhstock.com/?user=hoangsonx&token=322bd1678e81b504225b8ff796fc5747&act=down&id=' + id + '&site=' + source;
+            var url = API_ENDPOINT + '?user=hoangsonx&token=322bd1678e81b504225b8ff796fc5747&act=down&id=' + id + '&site=' + source;
             Util_.getJSON({
                 url: url
             }, function (data) {
                 // console.log(data)
                 if (data.status) {
                     var item_text = '<div><strong>' + AS_APP_NAME + '</strong></div>';
+                    item_text = item_text + '<p class="red"><strong>Xác nhận thông tin tải:</strong></p>';
                     item_text = item_text + '<div>' + data.file_size + '</div>';
-                    item_text = item_text + '<div><strong class="as-highlight">' + (data.fee && data.fee != "0" ? data.fee : 'Miễn phí tải lại 48h') + '</strong></div>';
+                    item_text = item_text + '<div><strong class="red">' + (data.fee && data.fee != "0" ? '-' + data.fee : 'Miễn phí tải lại 48h') + '</strong></div>';
                     info_element.html(item_text);
                     if (data.type) {
                         btn_button.attr("data-type", data.type);
@@ -154,11 +168,11 @@ window.Previewer_ = window.Previewer_ || (function ($) {
 
             // alert( type +'/'+  size);
 
-            info_element.append('<br/><h4 style="color:red">Đang xử lý tải về, xin đợi...</h4>');
+            info_element.append('<br/><h4 class="red">Đang xử lý tải về, xin đợi...</h4>');
             btn_button.html('<span class="loader"></span> Đang tải về..');
             btn_button.attr("disabled", true);
 
-            var url = 'http://api.anhstock.com/?user=hoangsonx&token=322bd1678e81b504225b8ff796fc5747&act=down&id=' + id + '&site=' + source + '&type=' + type + '&size=' + size + '&captcha=1';
+            var url = API_ENDPOINT + '?user=hoangsonx&token=322bd1678e81b504225b8ff796fc5747&act=down&id=' + id + '&site=' + source + '&type=' + type + '&size=' + size + '&captcha=1';
             Util_.getJSON({
                 url: url
             }, function (data) {

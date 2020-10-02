@@ -358,8 +358,11 @@
     display: block;
 }
 
-.as-highlight {
+.as-highlight, .red {
     color: red;
+}
+.grey {
+    color: #3e3d3d;
 }
 
 .loader {

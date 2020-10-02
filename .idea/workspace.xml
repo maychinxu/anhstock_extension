@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b82a69bf-1ab4-43fb-9afe-8b7d123cd609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Note_guide.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/architecture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/linkhay.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/linkhay.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/linkhay.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/linkhay.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/popup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/preview.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +51,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -55,19 +71,46 @@
       <workItem from="1600614511484" duration="4000" />
       <workItem from="1600614527898" duration="7419000" />
       <workItem from="1600622245408" duration="1173000" />
+      <workItem from="1600676205062" duration="500000" />
+      <workItem from="1600763788721" duration="1213000" />
+      <workItem from="1600775625098" duration="1080000" />
+      <workItem from="1600823862066" duration="672000" />
+      <workItem from="1601093378205" duration="613000" />
+      <workItem from="1601351474019" duration="4011000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1426" y="433" width="587" height="534" key="find.popup" timestamp="1600622573296">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state x="-41" y="109" key="SettingsEditor" timestamp="1601353575096">
+      <screen x="0" y="0" width="1707" height="1027" />
     </state>
+    <state x="-41" y="109" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1601353575096" />
+    <state x="708" y="318" width="557" height="534" key="find.popup" timestamp="1601352016570">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="708" y="318" width="557" height="534" key="find.popup/0.0.1707.1027@0.0.1707.1027" timestamp="1601352016570" />
     <state x="1426" y="433" width="587" height="534" key="find.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1600622573296" />
+    <state x="510" y="238" key="run.anything.popup" timestamp="1600775999481">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="510" y="238" key="run.anything.popup/0.0.1707.1027@0.0.1707.1027" timestamp="1600775999481" />
   </component>
 </project>
